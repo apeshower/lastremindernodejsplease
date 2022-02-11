@@ -11,6 +11,7 @@ app.use(body_parser_1["default"].json());
 app.use((0, cors_1["default"])());
 app.use(index_1["default"]);
 var uri = "mongodb+srv://".concat(process.env.MONGO_USER, ":").concat(process.env.MONGO_PASSWORD, "@cluster0.nvt4o.mongodb.net/").concat(process.env.MONGO_DB, "?retryWrites=true&w=majority");
+console.log(uri);
 mongoose_1["default"].connect(uri).then(function () {
     return app.listen(PORT, function () {
         return console.log("Server runs on htts://localhost:".concat(PORT));
