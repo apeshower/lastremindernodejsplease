@@ -15,7 +15,7 @@ app.use(router)
 
 const uri: string = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.nvt4o.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`
 
-mongoose.connect(uri).then(() =>
+mongoose.connect(process.env.MONGODB_URI || uri).then(() =>
     app.listen(PORT, () => 
         console.log(`Server runs on htts://localhost:${PORT}`)
     )    
